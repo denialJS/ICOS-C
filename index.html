@@ -107,32 +107,52 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
-    <main>
-        <div class="container">
-            <h2>Select an Option</h2>
-            <select id="options">
-                <option value="">-- Choose the color --</option>
-                <option value="Option 1">Orange</option>
-                <option value="Option 2">sandal</option>
-                <option value="Option 3">Lavender</option>
-            </select>
-            <button onclick="showChoice()">Submit</button>
-            <p id="output">Your selection will appear here.</p>
+    <div class="container">
+        <div class="logo">
+            <img src="https://via.placeholder.com/80" alt="ICOS Church Logo">
         </div>
-    </main>
+        <h2>Choose an Option</h2>
+        <select id="options">
+            <option value="">-- Select an Option --</option>
+            <option value="Worship">Worship</option>
+            <option value="Community">Community</option>
+            <option value="Faith">Faith</option>
+        </select>
+        <button onclick="getOptionOutput()">Submit</button>
+        <p id="output">Your selection will be displayed here.</p>
+        <div id="result" class="result" style="display: none;"></div>
+        <div id="stats" class="stats" style="display: none;"></div>
+    </div>
     <footer>
-        &copy; 2024 Professional Select Website. All rights reserved.
+        &copy; 2024 ICOS Church. All rights reserved.
     </footer>
     <script>
-        function showChoice() {
+        const counts = {
+            Worship: 0,
+            Community: 0,
+            Faith: 0
+        };
+
+        function getOptionOutput() {
             const selectElement = document.getElementById('options');
             const outputElement = document.getElementById('output');
+            const resultElement = document.getElementById('result');
+            const statsElement = document.getElementById('stats');
             const selectedValue = selectElement.value;
 
             if (selectedValue) {
+                counts[selectedValue]++;
                 outputElement.textContent = `You selected: ${selectedValue}`;
+                resultElement.textContent = `Result: ${selectedValue}`;
+                resultElement.style.display = 'block';
+
+                const stats = `Worship: ${counts.Worship}, Community: ${counts.Community}, Faith: ${counts.Faith}`;
+                statsElement.textContent = `Stats: ${stats}`;
+                statsElement.style.display = 'block';
             } else {
                 outputElement.textContent = "Please select an option first.";
+                resultElement.style.display = 'none';
+                statsElement.style.display = 'none';
             }
         }
     </script>
