@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Select Website</title>
+    <title>ICOS CHURCH</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background-color: #007bff;
+            background-color: #282c34;
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 1.5rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
         }
         nav {
             background-color: #343a40;
             padding: 10px;
-            text-align: center;
+            text-align: right;
         }
         nav a {
             color: white;
@@ -90,7 +99,8 @@
 </head>
 <body>
     <header>
-        Professional Select Website
+        <h1>ICOS Church</h1>
+        <p>In Christ, Our Strength</p>
     </header>
     <nav>
         <a href="#home">Home</a>
@@ -101,10 +111,10 @@
         <div class="container">
             <h2>Select an Option</h2>
             <select id="options">
-                <option value="">-- Choose an option --</option>
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
-                <option value="Option 3">Option 3</option>
+                <option value="">-- Choose the color --</option>
+                <option value="Option 1">Orange</option>
+                <option value="Option 2">sandal</option>
+                <option value="Option 3">Lavender</option>
             </select>
             <button onclick="showChoice()">Submit</button>
             <p id="output">Your selection will appear here.</p>
