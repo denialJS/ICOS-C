@@ -10,16 +10,17 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            color: #333;
+            color: #06e5fe;
         }
         header {
-            background-color: #282c34;
+            background-color: #00d9ff;
             color: white;
             padding: 20px;
             text-align: center;
         }
-        header h1 {
-            font-size: 2.5rem;
+        div h2 {
+            color: #009dff;
+            font-size: 2rem;
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -29,7 +30,7 @@
             margin: 10px 0 0;
         }
         nav {
-            background-color: #343a40;
+            background-color: #79efff;
             padding: 10px;
             text-align: right;
         }
@@ -40,7 +41,7 @@
             font-size: 1.1rem;
         }
         nav a:hover {
-            color: #007bff;
+            color: #00bfff;
         }
         main {
             display: flex;
@@ -54,8 +55,8 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        max-width: 400px;
+        text-align: left;
+        max-width: 1500px;
         width: 100%;
     }
     select {
@@ -67,7 +68,7 @@
         box-sizing: border-box;
     }
     button {
-        background: #007BFF;
+        background: #0095ff;
         color: white;
         padding: 10px 20px;
         border: none;
@@ -95,12 +96,14 @@
         <a href="#contact">Contact</a>
     </nav>
 </div>
-    <div class="container">
-        <h1>Choose a Color and Enter Your Name</h1>
+<div>
+    <div class="container" >
+        <h2>Choose a Color and Enter Your Name</h2>
         <input type="text" id="userName" placeholder="Enter your name" required>
         <select id="colorSelect">
+            <option value="">-- Select an color --</option>
             <option value="Red">Red</option>
-            <option value="Green">Green</option>
+            <option value="Green">Green</option>s
             <option value="Blue">Blue</option>
             <option value="Yellow">Yellow</option>
             <option value="Purple">Purple</option>
@@ -108,6 +111,7 @@
         <button onclick="sendColor()">Submit</button>
         <div class="result" id="result"></div>
     </div>
+    
     <script>
         function sendColor() {
     const selectedColor = document.getElementById('colorSelect').value;
